@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан "Gourmet"</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-utensils me-2"></i>Gourmet
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light me-2" id="cartButton">
+                        <i class="fas fa-shopping-cart"></i> Корзина (<span id="cartCount">0</span>)
+                    </button>
+                    <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#bookingModal">Забронировать</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="container my-5">
+        <!-- Герой-секция -->
+        <section class="hero mb-5">
+            <div class="hero-content text-center text-white">
+                <h1 class="display-4 fw-bold">Добро пожаловать в ресторан "Gourmet"</h1>
+                <p class="lead">Изысканная кухня и уютная атмосфера</p>
+                <a href="#menu" class="btn btn-primary btn-lg">Посмотреть меню</a>
+            </div>
+        </section>
+
+        <!-- Меню -->
+        <section id="menu" class="mb-5">
+            <h2 class="text-center mb-4">Наше меню</h2>
+            <div class="text-center mb-4">
+                <button class="btn btn-secondary filter-btn active" data-category="all">Все</button>
+                <button class="btn btn-secondary filter-btn" data-category="main">Основные блюда</button>
+                <button class="btn btn-secondary filter-btn" data-category="dessert">Десерты</button>
+                <button class="btn btn-secondary filter-btn" data-category="drink">Напитки</button>
+            </div>
+
+            <div class="row">
+                <!-- Блюдо 1 -->
+                <div class="col-md-4 mb-4" data-category="main">
+                    <div class="card h-100">
+                        <img src="img/steak.jpg" class="card-img-top" alt="Стейк Рибай">
+                        <div class="card-body">
+                            <h5 class="card-title">Стейк Рибай</h5>
+                            <p class="card-text">Говяжий стейк с соусом из трюфелей и овощами гриль.</p>
+                            <span class="badge bg-success">Хит</span>
+                            <p class="mt-2"><strong>1500 ₽</strong></p>
+                            <button class="btn btn-warning">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 2 -->
+                <div class="col-md-4 mb-4" data-category="main">
+                    <div class="card h-100">
+                        <img src="img/pasta.jpg" class="card-img-top" alt="Паста Карбонара">
+                        <div class="card-body">
+                            <h5 class="card-title">Паста Карбонара</h5>
+                            <p class="card-text">Спагетти с беконом, сливочным соусом и пармезаном.</p>
+                            <p class="mt-2"><strong>850 ₽</strong></p>
+                            <button class="btn btn-warning">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 3 -->
+                <div class="col-md-4 mb-4" data-category="dessert">
+                    <div class="card h-100">
+                        <img src="img/tiramisu.jpg" class="card-img-top" alt="Тирамису">
+                        <div class="card-body">
+                            <h5 class="card-title">Тирамису</h5>
+                            <p class="card-text">Классический итальянский десерт с кофе и маскарпоне.</p>
+                            <span class="badge bg-info">Новинка</span>
+                            <p class="mt-2"><strong>600 ₽</strong></p>
+                            <button class="btn btn-warning">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Добавьте остальные 9 блюд по аналогии -->
+            </div>
+        </section>
+
+        <!-- Акции -->
+        <section class="promo mb-5">
+            <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="alert alert-info text-center py-4">
+                            <h3>Акция!</h3>
+                            <p class="fs-4">При заказе от 3000 ₽ – бесплатная бутылка вина!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="alert alert-success text-center py-4">
+                            <h3>Спецпредложение</h3>
+                            <p class="fs-4">Скидка 20% на все десерты в будни!</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>О нас</h5>
+                    <p>Ресторан "Gourmet" - это место, где встречаются изысканный вкус и уютная атмосфера.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Контакты</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Москва, ул. Пушкина, 10</p>
+                    <p><i class="fas fa-phone me-2"></i> +7 (123) 456-7890</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Мы в соцсетях</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-telegram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2024 Ресторан "Gourmet". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно бронирования -->
+    <div class="modal fade" id="bookingModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Забронировать стол</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="mb-3">
+                            <label class="form-label">Ваше имя</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Телефон</label>
+                            <input type="tel" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Дата и время</label>
+                            <input type="datetime-local" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Количество гостей</label>
+                            <select class="form-select">
+                                <option>1-2</option>
+                                <option>3-4</option>
+                                <option>5-6</option>
+                                <option>7+</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Забронировать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
